@@ -1,6 +1,7 @@
 import '../scss/app.scss';
 
-/* Your JS Code goes here */
+import UserStoryController from './controllers/user-story.js'
 
-/* Demo JS */
-import './demo.js';
+document.addEventListener('DOMContentLoaded', () => {
+	new UserStoryController();
+})
