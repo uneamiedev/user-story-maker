@@ -1,13 +1,15 @@
 class UserStory {
-	static id = 0;
-
 	constructor() {
 		this.userStories = JSON.parse(localStorage.getItem('userStories')) || [];
 	}
 
+	get _id() {
+		return this.userStories.length > 0 ? this.userStories.length + 1 : 1;
+	}
+
 	add(userStoryContent) {
 		const userStory = {
-			id: ++UserStory.id,
+			id: this._id,
 			content: userStoryContent,
 		};
 
