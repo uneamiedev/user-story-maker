@@ -16,7 +16,12 @@ class UserStory {
 	}
 
 	_commit(userStories) {
+		this.onUserStoryListChanged(userStories);
 		localStorage.setItem('userStories', JSON.stringify(userStories));
+	}
+
+	bindUserStoryChanged(callback) {
+		this.onUserStoryListChanged = callback;
 	}
 }
 

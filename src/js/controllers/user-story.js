@@ -6,7 +6,14 @@ class UserStoryController {
 		this.userStoryModel = new UserStory;
 		this.userStoryView = new UserStoryView;
 
+		this.userStoryModel.bindUserStoryChanged(this.onUserStoryListChanged);
 		this.userStoryView.bindAdd(this.handleAdd);
+
+		this.onUserStoryListChanged(this.userStoryModel.userStories);
+	}
+
+	onUserStoryListChanged = userStories => {
+		this.userStoryView.display(userStories);
 	}
 
 	handleAdd = userStoryContent => {
