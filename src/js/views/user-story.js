@@ -23,11 +23,12 @@ class UserStoryView {
 		const result = this.form.elements.result;
 
 		let userStory = `En tant que ${user.value}, je souhaite ${goal.value}`;
+		
 		if (result.value || result.value.length !== 0) {
 			userStory += ` afin de ${result.value}`;
 		}
 
-		return userStory
+		return userStory;
 	}
 
 	_hasErrors() {
@@ -36,7 +37,7 @@ class UserStoryView {
 			['goal', 'je souhaite', '(objectif de la fonctionnalité)'],
 		];
 
-		let errorMessages = '';;
+		let errorMessages = '';
 
 		errors.forEach(error => {
 			if (this.form.elements[error[0]].value.trim().length === 0) {
