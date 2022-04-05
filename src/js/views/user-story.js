@@ -52,6 +52,7 @@ class UserStoryView {
 
 	display(userStories) {
 		this.container.innerHTML = '';
+		this.counter.textContent = userStories.length;
 
 		if (userStories.length === 0) {
 			const p = this.createElement('p');
