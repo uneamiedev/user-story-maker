@@ -27,6 +27,19 @@ class UserStory {
 		localStorage.removeItem('userStories');
 	}
 
+	copyToClipboard() {
+		const rawUserStories = this.userStories.map(userStory => {
+			return userStory.content;
+		});
+
+		if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+			const userStories = rawUserStories.join('\r\n');
+			return navigator.clipboard.writeText(userStories);
+		}
+
+		return Promise.reject('The Clipboard API is not available.');
+	}
+
 	_commit(userStories) {
 		this.onUserStoryListChanged(userStories);
 		localStorage.setItem('userStories', JSON.stringify(userStories));

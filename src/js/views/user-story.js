@@ -36,6 +36,14 @@ class UserStoryView {
 		});
 	}
 
+	bindCopyToClipboard(handler) {
+		this.container.addEventListener('click', event => {
+			if (event.target.classList.contains('js-user-story-copy')) {
+				handler();
+			}
+		});
+	}
+
 	get _userStoryContent() {
 		const user = this.form.elements.user;
 		const goal = this.form.elements.goal;
@@ -77,6 +85,7 @@ class UserStoryView {
 			this.container.append(p);
 		} else {
 			this.createButton(this.container, 'js-user-story-delete-all', 'Supprimer toutes les user stories');
+			this.createButton(this.container, 'js-user-story-copy', 'Copier toutes les user stories');
 			
 			const ul = this.createElement('ul');
 			this.container.append(ul);
