@@ -10,6 +10,7 @@ class UserStoryController {
 		this.userStoryView.bindAdd(this.handleAdd);
 		this.userStoryView.bindDelete(this.handleDelete);
 		this.userStoryView.bindDeleteAll(this.handleDeleteAll);
+		this.userStoryView.bindCopyToClipboard(this.handleCopyToClipboard);
 
 		this.onUserStoryListChanged(this.userStoryModel.userStories);
 	}
@@ -28,6 +29,10 @@ class UserStoryController {
 	
 	handleDeleteAll = () => {
 		this.userStoryModel.deleteAll();
+	}
+
+	handleCopyToClipboard = () => {
+		this.userStoryModel.copyToClipboard();
 	}
 }
 
