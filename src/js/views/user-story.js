@@ -19,6 +19,15 @@ class UserStoryView {
 		})
 	}
 
+	bindDelete(handler) {
+		this.container.addEventListener('click', event => {
+			if (event.target.classList.contains('js-user-story-delete')) {
+				const id = event.target.dataset.id;
+				handler(id);
+			}
+		});
+	}
+
 	get _userStoryContent() {
 		const user = this.form.elements.user;
 		const goal = this.form.elements.goal;

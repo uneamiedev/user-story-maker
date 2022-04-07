@@ -17,6 +17,11 @@ class UserStory {
 		this._commit(this.userStories);
 	}
 
+	delete(id) {
+		this.userStories = this.userStories.filter(userStory => userStory.id !== parseInt(id));
+		this._commit(this.userStories);
+	}
+
 	_commit(userStories) {
 		this.onUserStoryListChanged(userStories);
 		localStorage.setItem('userStories', JSON.stringify(userStories));

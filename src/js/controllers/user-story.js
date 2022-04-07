@@ -8,6 +8,7 @@ class UserStoryController {
 
 		this.userStoryModel.bindUserStoryChanged(this.onUserStoryListChanged);
 		this.userStoryView.bindAdd(this.handleAdd);
+		this.userStoryView.bindDelete(this.handleDelete);
 
 		this.onUserStoryListChanged(this.userStoryModel.userStories);
 	}
@@ -18,6 +19,10 @@ class UserStoryController {
 
 	handleAdd = userStoryContent => {
 		this.userStoryModel.add(userStoryContent);
+	}
+
+	handleDelete = id => {
+		this.userStoryModel.delete(id);
 	}
 }
 
