@@ -19,6 +19,23 @@ class UserStoryView {
 		})
 	}
 
+	bindDelete(handler) {
+		this.container.addEventListener('click', event => {
+			if (event.target.classList.contains('js-user-story-delete')) {
+				const id = event.target.dataset.id;
+				handler(id);
+			}
+		});
+	}
+
+	bindDeleteAll(handler) {
+		this.container.addEventListener('click', event => {
+			if (event.target.classList.contains('js-user-story-delete-all')) {
+				handler();
+			}
+		});
+	}
+
 	get _userStoryContent() {
 		const user = this.form.elements.user;
 		const goal = this.form.elements.goal;
@@ -59,14 +76,13 @@ class UserStoryView {
 			p.textContent = 'Aucune user story créée';
 			this.container.append(p);
 		} else {
+			this.createButton(this.container, 'js-user-story-delete-all', 'Supprimer toutes les user stories');
+			
 			const ul = this.createElement('ul');
 			this.container.append(ul);
 
 			userStories.forEach(userStory => {
-				const li = this.createElement('li');
-				li.textContent = userStory.content;
-
-				ul.append(li);
+				this.createUserStoryComponent(ul, userStory);
 			});
 		}
 	}
@@ -77,6 +93,26 @@ class UserStoryView {
 		if (className) element.classList.add(className);
 
 		return element;
+	}
+
+	createUserStoryComponent(container, userStory) {
+		const template = document.querySelector('#template-user-story');
+		const li = document.importNode(template.content, true);
+
+		const content = li.querySelector('.js-user-story-content');
+		content.textContent = userStory.content;
+
+		const deleteButton = li.querySelector('.js-user-story-delete');
+		deleteButton.textContent = 'Supprimer';
+		deleteButton.dataset.id = userStory.id;
+
+		container.append(li);
+	}
+
+	createButton(container, className, text) {
+		const button = this.createElement('button', className);
+		button.textContent = text;
+		container.append(button);
 	}
 }
 
