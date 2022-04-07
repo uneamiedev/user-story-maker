@@ -22,6 +22,11 @@ class UserStory {
 		this._commit(this.userStories);
 	}
 
+	deleteAll() {
+		this._commit([]);
+		localStorage.removeItem('userStories');
+	}
+
 	_commit(userStories) {
 		this.onUserStoryListChanged(userStories);
 		localStorage.setItem('userStories', JSON.stringify(userStories));

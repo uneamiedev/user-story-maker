@@ -28,6 +28,14 @@ class UserStoryView {
 		});
 	}
 
+	bindDeleteAll(handler) {
+		this.container.addEventListener('click', event => {
+			if (event.target.classList.contains('js-user-story-delete-all')) {
+				handler();
+			}
+		});
+	}
+
 	get _userStoryContent() {
 		const user = this.form.elements.user;
 		const goal = this.form.elements.goal;
@@ -68,6 +76,8 @@ class UserStoryView {
 			p.textContent = 'Aucune user story créée';
 			this.container.append(p);
 		} else {
+			this.createButton(this.container, 'js-user-story-delete-all', 'Supprimer toutes les user stories');
+			
 			const ul = this.createElement('ul');
 			this.container.append(ul);
 
@@ -97,6 +107,12 @@ class UserStoryView {
 		deleteButton.dataset.id = userStory.id;
 
 		container.append(li);
+	}
+
+	createButton(container, className, text) {
+		const button = this.createElement('button', className);
+		button.textContent = text;
+		container.append(button);
 	}
 }
 
