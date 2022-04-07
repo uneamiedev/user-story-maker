@@ -63,10 +63,7 @@ class UserStoryView {
 			this.container.append(ul);
 
 			userStories.forEach(userStory => {
-				const li = this.createElement('li');
-				li.textContent = userStory.content;
-
-				ul.append(li);
+				this.createUserStoryComponent(ul, userStory);
 			});
 		}
 	}
@@ -77,6 +74,20 @@ class UserStoryView {
 		if (className) element.classList.add(className);
 
 		return element;
+	}
+
+	createUserStoryComponent(container, userStory) {
+		const template = document.querySelector('#template-user-story');
+		const li = document.importNode(template.content, true);
+
+		const content = li.querySelector('.js-user-story-content');
+		content.textContent = userStory.content;
+
+		const deleteButton = li.querySelector('.js-user-story-delete');
+		deleteButton.textContent = 'Supprimer';
+		deleteButton.dataset.id = userStory.id;
+
+		container.append(li);
 	}
 }
 
