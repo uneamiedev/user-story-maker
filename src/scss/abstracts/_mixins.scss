@@ -1,0 +1,41 @@
+/**
+* Mediaqueries
+*/
+@mixin screen-s {
+	@media (min-width: $breakpoint-small) {
+		@content;
+	}
+}
+
+@mixin screen-m {
+	@media (min-width: $breakpoint-medium) {
+		@content;
+	}
+}
+
+@mixin screen-l {
+	@media (min-width: $breakpoint-large) {
+		@content;
+	}
+}
+
+@mixin screen-xl {
+	@media (min-width: $breakpoint-xl) {
+		@content;
+	}
+}
+
+@mixin screen-xxl {
+	@media (min-width: $breakpoint-xxl) {
+		@content;
+	}
+}
+
+/**
+* Standard properties for ::before and ::after
+*/
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+	content: $content;
+	display: $display;
+	position: $pos;
+}

@@ -1,0 +1,32 @@
+:root {
+	/* Fonts */
+	--fs-100: 0.75rem; 	// 12px
+	--fs-200: 0.875rem; // 14px
+	--fs-300: 1rem; 	// 16px
+	--fs-400: 1.5rem; 	// 24px
+	--fs-500: 2.5rem; 	// 40px
+	--fs-600: 3.5rem; 	// 48px
+
+	--ff-fallback: sans-serif;
+	--ff-primary: "Trebuchet MS", var(--ff-fallback);
+
+
+	/* Colors */
+	--clr-dark: 0, 0%, 11%;
+	--clr-light: 180, 12%, 97%;
+	--clr-white: 0 0% 100%;
+	--clr-accent: 90, 75%, 59%;
+	--clr-error: 0, 85%, 70%;
+	--clr-grey-100: 60, 0%, 44%;
+	--clr-grey-200: 180, 11%, 85%;
+
+	/* Layout */
+	--container-max-width: 82.5rem;
+}
+
+/* Breakpoints */
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
