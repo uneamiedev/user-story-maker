@@ -1,3 +1,43 @@
+.container {
+	margin: 0 auto;
+	padding: 0 20px;
+	width: 100%;
+
+	@include screen-s {
+		max-width: rem(540px);
+	}
+
+	@include screen-m {
+		max-width: rem(720px);
+	}
+
+	@include screen-l {
+		max-width: rem(960px);
+	}
+
+	@include screen-xl {
+		max-width: rem(1140px);
+	}
+
+	@include screen-xxl {
+		max-width: rem(1320px);
+	}
+}
+
+.flex {
+	display: flex;
+	gap: var(--gap, 1rem);
+}
+
+.grid {
+	display: grid;
+	gap: var(--gap, 1rem);
+}
+
+.flow > * + * {
+	margin-top: 1rem;
+}
+
 .sr-only {
 	position: absolute;
 	width: 1px;
