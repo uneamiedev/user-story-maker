@@ -1,0 +1,38 @@
+:root {
+	// Fonts
+	--fs-100: 0.75rem; 	// 12px
+	--fs-200: 0.875rem; // 14px
+	--fs-300: 1rem; 	// 16px
+	--fs-400: 1.5rem; 	// 24px
+	--fs-500: 2.5rem; 	// 40px
+	--fs-600: 3.5rem; 	// 48px
+
+	--ff-fallback: sans-serif;
+	--ff-primary: "Trebuchet MS", var(--ff-fallback);
+
+	// Colors
+	--color-dark: 0, 0%, 11%;
+	--color-light: 180, 12%, 97%;
+	--color-white: 0 0% 100%;
+	--color-accent: 90, 75%, 59%;
+	--color-grey-100: 60, 0%, 44%;
+	--color-grey-200: 180, 11%, 85%;
+
+	// User Interface
+	--ui-color-primary: hsl(var(--color-accent));
+	--ui-color-sucess: hsl(var(--color-accent));
+	--ui-color-danger: hsl(0, 85%, 70%);
+	--ui-color-text: hsl(var(--color-dark));
+	--ui-color-placeholder: hsl(var(--color-grey-100));
+	--ui-color-bg-primary: hsl(var(--color-white));
+	--ui-color-bg-secondary: hsl(var(--color-light));
+
+	--shadow: 2px 0px 10px hsla(var(--color-grey-100), 0.1);
+}
+
+$breakpoint-s: 576px;
+$breakpoint-m: 768px;
+$breakpoint-l: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-2xl: 1320px;
+$breakpoint-3xl: 1480px;
