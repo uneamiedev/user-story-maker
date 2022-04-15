@@ -13,4 +13,10 @@
 		font-weight: 300;
 		font-size: var(--fs-100);
 	}
+
+	@include screen-l {
+		position: fixed;
+		inset-inline: 0;
+		z-index: -1;
+	}
 }
