@@ -1,0 +1,64 @@
+$colum-padding-2xl: calc(((100% - $breakpoint-2xl) / 2) + 80px);
+$colum-padding-3xl: calc(((100% - $breakpoint-3xl) / 2) + 80px);
+
+.grid-layout {
+	min-height: 100%;
+
+	@include screen-l {
+		display: flex;
+		min-height: 100vh;
+
+		& > * {
+			flex: 1 auto;
+		}
+	}
+}
+
+.grid-column {
+	min-height: calc(100vh - 200px);
+
+	padding-left: rem(20px);
+	padding-right: rem(20px);
+
+	@include screen-l {
+		padding-top: rem(120px);
+	}
+}
+
+.grid-column-left {
+	padding-top: rem(120px);
+	min-width: 60%;
+
+	background-color: var(--ui-color-bg-primary);
+
+	border-radius: 0 0 40px 40px;
+	box-shadow: var(--shadow);
+
+	@include screen-l {
+		padding-left: rem(80px);
+
+		border-radius: 0 60px 60px 0;
+	}
+
+	@include screen-2xl {
+		padding-left: $colum-padding-2xl;
+	}
+
+	@include screen-3xl {
+		padding-left: $colum-padding-3xl;
+	}
+}
+
+.grid-column-right {
+	@include screen-l {
+		padding-right: rem(80px);
+	}
+
+	@include screen-2xl {
+		padding-right: $colum-padding-2xl;
+	}
+
+	@include screen-3xl {
+		padding-right: $colum-padding-3xl;
+	}
+}

@@ -1,0 +1,16 @@
+.home {
+	background-color: var(--ui-color-bg-secondary);
+
+	.header {
+		position: absolute;
+		inset-inline: 0;
+	}
+
+	.footer {
+		@include screen-l {
+			position: absolute;
+			inset-inline: 0;
+			bottom: 0;
+		}
+	}
+}

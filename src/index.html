@@ -6,40 +6,43 @@
   <title>User Story Maker</title>
 </head>
 
-<body>
-  <header>
+<body class="home">
+  <header class="header container">
     <h1>Story, créateur de récits utilisateur</h1>
   </header>
-  <main>
-    <form name="user-story-create-form">
-      <fieldset>
-        <legend class="sr-only">Utilisateur final</legend>
-        <label for="user">En tant que</label>
-        <input id="user" name="user" type="text" required>
-      </fieldset>
+  <main class="grid-layout">
+    <section class="grid-column grid-column-left">
+      <form name="user-story-create-form">
+        <fieldset>
+          <legend class="sr-only">Utilisateur final</legend>
+          <label for="user">En tant que</label>
+          <input id="user" name="user" type="text" required>
+        </fieldset>
 
-      <fieldset>
-        <legend class="sr-only">Objectif de la fonctionnalité</legend>
-        <label for="goal">je souhaite</label>
-        <input id="goal" name="goal" type="text" required>
-      </fieldset>
+        <fieldset>
+          <legend class="sr-only">Objectif de la fonctionnalité</legend>
+          <label for="goal">je souhaite</label>
+          <input id="goal" name="goal" type="text" required>
+        </fieldset>
 
-      <fieldset>
-        <legend class="sr-only">Valeur apportée à l'utilisateur final</legend>
-        <label for="result">afin de</label>
-        <input id="result" name="result" type="text">
-      </fieldset>
+        <fieldset>
+          <legend class="sr-only">Valeur apportée à l'utilisateur final</legend>
+          <label for="result">afin de</label>
+          <input id="result" name="result" type="text">
+        </fieldset>
 
-      <button type="submit">Créer ma user story</button>
-    </form>
-    <section>
+        <button type="submit">Créer ma user story</button>
+      </form>
+    </section>
+
+    <section class="grid-column grid-column-right">
       <h2>Mes user stories <span class="js-user-story-counter"></span></h2>
       <div class="js-user-story-container">
 
       </div>
     </section>
   </main>
-  <footer>
+  <footer class="footer container">
     <a href="#">Mentions légales</a>
   </footer>
   <template id="template-user-story">
