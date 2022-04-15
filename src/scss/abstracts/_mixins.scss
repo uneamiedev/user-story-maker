@@ -1,0 +1,35 @@
+@mixin screen-s {
+	@media (min-width: rem($breakpoint-s)) {
+		@content;
+	}
+}
+
+@mixin screen-m {
+	@media (min-width: rem($breakpoint-m)) {
+		@content;
+	}
+}
+
+@mixin screen-l {
+	@media (min-width: rem($breakpoint-l)) {
+		@content;
+	}
+}
+
+@mixin screen-xl {
+	@media (min-width: rem($breakpoint-xl)) {
+		@content;
+	}
+}
+
+@mixin screen-2xl {
+	@media (min-width: rem($breakpoint-2xl)) {
+		@content;
+	}
+}
+
+@mixin screen-3xl {
+	@media (min-width: rem($breakpoint-3xl)) {
+		@content;
+	}
+}
