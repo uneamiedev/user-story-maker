@@ -1,3 +1,9 @@
+@mixin screen-xs {
+	@media (min-width: rem($breakpoint-xs)) {
+		@content;
+	}
+}
+
 @mixin screen-s {
 	@media (min-width: rem($breakpoint-s)) {
 		@content;
