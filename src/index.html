@@ -15,24 +15,24 @@
   </header>
   <main class="grid-layout">
     <section class="grid-column grid-column-left">
-      <form name="user-story-create-form">
-        <fieldset>
-          <legend class="sr-only">Utilisateur final</legend>
+      <form class="form" name="user-story-create-form">
+        <div class="field-group">
           <label for="user">En tant que</label>
-          <input id="user" name="user" type="text" required>
-        </fieldset>
+          <span id="hint-user" class="sr-only">(utilisateur final)</span>
+          <input id="user" aria-describedby="hint-user" name="user" type="text" required placeholder="visiteur">
+        </div>
 
-        <fieldset>
-          <legend class="sr-only">Objectif de la fonctionnalité</legend>
+        <div class="field-group">
           <label for="goal">je souhaite</label>
-          <input id="goal" name="goal" type="text" required>
-        </fieldset>
+          <span id="hint-goal" class="sr-only">(objectif de la fonctionnalité)</span>
+          <input id="goal" aria-describedby="hint-goal" name="goal" type="text" required placeholder="créer des user-stories">
+        </div>
 
-        <fieldset>
-          <legend class="sr-only">Valeur apportée à l'utilisateur final</legend>
+        <div class="field-group">
           <label for="result">afin de</label>
-          <input id="result" name="result" type="text">
-        </fieldset>
+          <span id="hint-result" class="sr-only">(valeur apportée à l'utilisateur final)</span>
+          <input id="result" aria-describedby="hint-result" name="result" type="text" placeholder="faire plaisir à Amy">
+        </div>
 
         <button type="submit">Créer ma user story</button>
       </form>
