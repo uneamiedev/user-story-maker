@@ -1,0 +1,10 @@
+.form {
+	padding-bottom: 40px;
+	@include screen-xs {
+		padding: 30px 40px;
+	}
+
+	@include screen-m {
+		padding: 10% 40px;
+	}
+}
