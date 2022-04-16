@@ -1,0 +1,9 @@
+.logo {
+	position: relative;
+
+	&::before {
+		@include pseudo($content: url("/src/images/design/doodle.svg"));
+		top: rem(-24px);
+		left: rem(-4px);
+	}
+}
