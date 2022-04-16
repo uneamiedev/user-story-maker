@@ -1,0 +1,29 @@
+.footer {
+	padding-top: rem(20px);
+	padding-bottom: rem(20px);
+
+	ul {
+		display: flex;
+		justify-content: center;
+		padding-left: 0;
+
+		@include screen-l {
+			justify-content: start;
+		}
+
+		li:not(:last-child) {
+			position: relative;
+			margin-right: rem(20px);
+
+			&::after {
+				@include pseudo();
+				right: rem(-12px);
+				bottom: rem(10px);
+				width: rem(4px);
+				height: rem(4px);
+				border-radius: 50%;
+				background-color: var(--ui-color-primary);
+			}
+		}
+	}
+}
