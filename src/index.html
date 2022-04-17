@@ -6,45 +6,54 @@
   <title>User Story Maker</title>
 </head>
 
-<body>
-  <header>
-    <h1>Story, créateur de récits utilisateur</h1>
+<body class="home">
+  <header class="header container">
+    <div class="logo">
+      <img src="images/content/logo.svg" alt="Story">
+    </div>
+    <h1 class="catch-phrase">créateur de récits utilisateur</h1>
   </header>
-  <main>
-    <form name="user-story-create-form">
-      <fieldset>
-        <legend class="sr-only">Utilisateur final</legend>
-        <label for="user">En tant que</label>
-        <input id="user" name="user" type="text" required>
-      </fieldset>
+  <main class="grid-layout">
+    <section class="grid-column grid-column-left">
+      <form class="form" name="user-story-create-form">
+        <div class="field-group">
+          <label for="user">En tant que</label>
+          <span id="hint-user" class="sr-only">(utilisateur final)</span>
+          <input id="user" aria-describedby="hint-user" name="user" type="text" required placeholder="visiteur">
+        </div>
 
-      <fieldset>
-        <legend class="sr-only">Objectif de la fonctionnalité</legend>
-        <label for="goal">je souhaite</label>
-        <input id="goal" name="goal" type="text" required>
-      </fieldset>
+        <div class="field-group">
+          <label for="goal">je souhaite</label>
+          <span id="hint-goal" class="sr-only">(objectif de la fonctionnalité)</span>
+          <input id="goal" aria-describedby="hint-goal" name="goal" type="text" required placeholder="créer des user-stories">
+        </div>
 
-      <fieldset>
-        <legend class="sr-only">Valeur apportée à l'utilisateur final</legend>
-        <label for="result">afin de</label>
-        <input id="result" name="result" type="text">
-      </fieldset>
+        <div class="field-group">
+          <label for="result">afin de</label>
+          <span id="hint-result" class="sr-only">(valeur apportée à l'utilisateur final)</span>
+          <input id="result" aria-describedby="hint-result" name="result" type="text" placeholder="faire plaisir à Amy">
+        </div>
 
-      <button type="submit">Créer ma user story</button>
-    </form>
-    <section>
-      <h2>Mes user stories <span class="js-user-story-counter"></span></h2>
-      <div class="js-user-story-container">
+        <button type="submit" class="button-primary">Créer ma user story</button>
+      </form>
+    </section>
+
+    <section class="grid-column grid-column-right user-story-section">
+      <h2 class="user-story-section__title">Mes user stories <span class="js-user-story-counter"></span></h2>
+      <div class="js-user-story-container user-story-section__content">
 
       </div>
     </section>
   </main>
-  <footer>
-    <a href="#">Mentions légales</a>
+  <footer class="footer container">
+    <ul role="list">
+      <li><a class="link" href="#">Mentions légales</a></li>
+      <li>Créé par <a class="link" href="#">Amy</a></li>
+    </ul>
   </footer>
   <template id="template-user-story">
-    <li>
-      <button class="js-user-story-delete"></button>
+    <li class="user-story">
+      <button class="js-user-story-delete button-delete"></button>
       <span class="js-user-story-content"></span>
     </li>
   </template>

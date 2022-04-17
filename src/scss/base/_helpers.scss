@@ -1,3 +1,14 @@
+.container {
+	margin: 0 auto;
+	padding: 0 20px;
+	width: 100%;
+	max-width: 1480px;
+
+	@include screen-l {
+		padding: 0 80px;
+	}
+}
+
 .sr-only {
 	position: absolute;
 	width: 1px;

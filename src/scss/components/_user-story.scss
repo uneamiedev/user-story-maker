@@ -1,0 +1,44 @@
+.user-story {
+	//outline: 1px solid rgb(0, 60, 255);
+	position: relative;
+	padding: 1rem;
+	background-color: var(--ui-color-bg-primary);
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+
+	button.button-delete {
+		position: absolute;
+		top: rem(-10px);
+		right: rem(-10px);
+		width: rem(24px);
+		height: rem(24px);
+		background-color: var(--ui-color-bg-action);
+		border: none;
+		border-radius: 50%;
+		transition: all .2s linear;
+		transition-property: background-color, filter;
+		cursor: pointer;
+
+		&::after {
+			@include pseudo($content: url("/src/images/design/cross.svg"));
+			top: rem(2px);
+			left: rem(2px);
+		}
+
+		&:hover {
+			background-color: var(--ui-color-danger);
+		}
+
+		&:focus-visible {
+			background-color: var(--ui-color-danger);
+			outline: none;
+		}
+
+		&:hover,
+		&:focus-visible {
+			&::after {
+				filter: brightness(0) saturate(100%) invert(100%) sepia(6%) saturate(0%) hue-rotate(109deg) brightness(109%) contrast(105%);
+			}
+		}
+	}
+}

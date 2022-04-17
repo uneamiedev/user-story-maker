@@ -1,0 +1,15 @@
+.header {
+	display: flex;
+	align-items: center;
+	padding-block: rem(40px);
+
+	.logo {
+		padding-right: 1rem;
+	}
+
+	.catch-phrase {
+		font-family: var(--ff-fallback);
+		font-weight: 300;
+		font-size: var(--fs-100);
+	}
+}

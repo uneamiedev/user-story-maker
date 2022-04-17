@@ -1,0 +1,23 @@
+.link {
+	position: relative;
+	color: var(--ui-color-text);
+	text-decoration: none;
+
+	&::before {
+		@include pseudo();
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: rem(2px);
+		background-color: var(--ui-color-primary);
+		transform-origin: right;
+		transform: scaleX(0);
+		transition: transform .3s ease-in-out;
+	}
+
+	&:hover::before,
+	&:focus-visible::before {
+		transform-origin: left;
+		transform: scaleX(1);
+	}
+}

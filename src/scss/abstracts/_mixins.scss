@@ -1,0 +1,50 @@
+@mixin screen-xs {
+	@media (min-width: rem($breakpoint-xs)) {
+		@content;
+	}
+}
+
+@mixin screen-s {
+	@media (min-width: rem($breakpoint-s)) {
+		@content;
+	}
+}
+
+@mixin screen-m {
+	@media (min-width: rem($breakpoint-m)) {
+		@content;
+	}
+}
+
+@mixin screen-l {
+	@media (min-width: rem($breakpoint-l)) {
+		@content;
+	}
+}
+
+@mixin screen-xl {
+	@media (min-width: rem($breakpoint-xl)) {
+		@content;
+	}
+}
+
+@mixin screen-2xl {
+	@media (min-width: rem($breakpoint-2xl)) {
+		@content;
+	}
+}
+
+@mixin screen-3xl {
+	@media (min-width: rem($breakpoint-3xl)) {
+		@content;
+	}
+}
+
+/**
+* Standard properties for ::before and ::after
+*/
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+	content: $content;
+	display: $display;
+	position: $pos;
+}

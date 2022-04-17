@@ -80,12 +80,12 @@ class UserStoryView {
 		this.counter.textContent = userStories.length;
 
 		if (userStories.length === 0) {
-			const p = this.createElement('p');
+			const p = this.createElement('p', ['empty-message']);
 			p.textContent = 'Aucune user story créée';
 			this.container.append(p);
 		} else {
-			this.createButton(this.container, 'js-user-story-delete-all', 'Supprimer toutes les user stories');
-			this.createButton(this.container, 'js-user-story-copy', 'Copier toutes les user stories');
+			this.createButton(this.container, ['js-user-story-copy', 'button-secondary'], 'Copier toutes les user stories');
+			this.createButton(this.container, ['js-user-story-delete-all', 'button-secondary', 'button-secondary--danger'], 'Supprimer toutes les user stories');
 			
 			const ul = this.createElement('ul');
 			this.container.append(ul);
@@ -99,7 +99,7 @@ class UserStoryView {
 	createElement(tag, className) {
 		const element = document.createElement(tag);
 
-		if (className) element.classList.add(className);
+		if (className) element.classList.add(...className);
 
 		return element;
 	}
@@ -112,8 +112,11 @@ class UserStoryView {
 		content.textContent = userStory.content;
 
 		const deleteButton = li.querySelector('.js-user-story-delete');
-		deleteButton.textContent = 'Supprimer';
 		deleteButton.dataset.id = userStory.id;
+
+		const span = this.createElement('span', ['sr-only']);
+		span.textContent = 'Supprimer la user story: ' + userStory.content;
+		deleteButton.append(span);
 
 		container.append(li);
 	}
