@@ -8,7 +8,7 @@
 
 	.footer {
 		@include screen-l {
-			position: absolute;
+			position: fixed;
 			inset-inline: 0;
 			bottom: 0;
 		}
