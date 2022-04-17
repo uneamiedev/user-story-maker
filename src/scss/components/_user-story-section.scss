@@ -1,0 +1,50 @@
+.user-story-section {
+	padding-top: rem(40px);
+
+	&__title {
+		margin-bottom: rem(24px);
+		text-align: center;
+
+		span {
+			display: inline-block;
+			width: rem(36px);
+			height: rem(36px);
+			background-color: var(--ui-color-primary);
+			border-radius: 50%;
+		}
+	}
+
+	&__content {
+		.button-secondary {
+			padding: rem(10px) rem(20px);
+			font-size: rem(14px);
+			margin-bottom: 1rem;
+			width: 100%;
+
+			&:first-child {
+				margin-right: 1rem;
+			}
+
+			@include screen-s {
+				width: calc(50% - 0.5rem);
+			}
+
+			@include screen-l {
+				width: 100%;
+			}
+		}
+	}
+
+	@include screen-l {
+		padding-top: rem(160px);
+		padding-left: rem(32px);
+	}
+
+	@include screen-xl {
+		padding-left: rem(40px);
+	}
+
+	@include screen-2xl {
+		padding-left: rem(60px);
+	}
+}
