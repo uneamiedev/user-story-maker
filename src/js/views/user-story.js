@@ -112,8 +112,11 @@ class UserStoryView {
 		content.textContent = userStory.content;
 
 		const deleteButton = li.querySelector('.js-user-story-delete');
-		deleteButton.textContent = 'Supprimer';
 		deleteButton.dataset.id = userStory.id;
+
+		const span = this.createElement('span', ['sr-only']);
+		span.textContent = 'Supprimer la user story: ' + userStory.content;
+		deleteButton.append(span);
 
 		container.append(li);
 	}
