@@ -8,7 +8,7 @@
 .button-primary {
 	@extend .reset-button;
 
-	padding: 14px 36px;
+	padding: rem(14px) rem(36px);
 	border: 2px solid var(--ui-color-primary);
 	background-color: var(--ui-color-primary);
 	transition: background-color .3s ease-in-out;
