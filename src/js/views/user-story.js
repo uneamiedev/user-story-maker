@@ -80,7 +80,7 @@ class UserStoryView {
 		this.counter.textContent = userStories.length;
 
 		if (userStories.length === 0) {
-			const p = this.createElement('p');
+			const p = this.createElement('p', ['empty-message']);
 			p.textContent = 'Aucune user story créée';
 			this.container.append(p);
 		} else {

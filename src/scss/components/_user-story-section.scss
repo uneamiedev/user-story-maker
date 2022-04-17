@@ -43,6 +43,14 @@
 				margin-top: rem(24px);
 			}
 		}
+
+		.empty-message {
+			padding: 2rem;
+			background-color: hsla(var(--color-grey-100), 0.3);
+			border-radius: 0.5rem;
+			color: hsl(var(--color-grey-200));
+			text-align: center;
+		}
 	}
 
 	@include screen-l {
