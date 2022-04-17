@@ -55,7 +55,7 @@
     "webpack-merge": "^5.8.0"
   },
   "engines": {
-    "node": "^12 || >=14"
+    "node": ">=14"
   },
   "keywords": [
     "user story",

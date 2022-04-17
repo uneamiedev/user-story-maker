@@ -1,5 +1,4 @@
 .user-story {
-	//outline: 1px solid rgb(0, 60, 255);
 	position: relative;
 	padding: 1rem;
 	background-color: var(--ui-color-bg-primary);
@@ -8,8 +7,8 @@
 
 	button.button-delete {
 		position: absolute;
-		top: rem(-10px);
-		right: rem(-10px);
+		top: rem(-12px);
+		right: rem(-12px);
 		width: rem(24px);
 		height: rem(24px);
 		background-color: var(--ui-color-bg-action);
@@ -23,6 +22,9 @@
 			@include pseudo($content: url("/src/images/design/cross.svg"));
 			top: rem(2px);
 			left: rem(2px);
+			width: rem(20px);
+			height: rem(20px);
+			border-radius: 50%;
 		}
 
 		&:hover {
