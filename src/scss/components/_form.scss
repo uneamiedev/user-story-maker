@@ -1,10 +1,27 @@
 .form {
-	padding-bottom: 40px;
-	@include screen-xs {
-		padding: 30px 40px;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: rem(60px);
+
+	@include screen-s {
+		margin-top: rem(60px);
+		padding-left: rem(40px);
+		padding-right: rem(40px);
 	}
 
-	@include screen-m {
-		padding: 10% 40px;
+	@include screen-l {
+		margin-top: rem(130px);
+		padding-left: 0;
+		padding-right: rem(40px);
+	}
+
+	@include screen-xl {
+		padding-right: rem(80px);
+	}
+
+	button[type="submit"] {
+		margin-top: rem(20px);
+		margin-left: auto;
+		max-width: max-content;
 	}
 }

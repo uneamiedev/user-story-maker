@@ -1,20 +1,22 @@
 .field-group {
-	display: flex;
-	flex-direction: column;
 	padding: 1rem 0;
-	font-size: calc(18px + 6 * ((100vw - rem($breakpoint-s)) / 680));
+	font-size: calc(20px + 6 * ((100vw - rem($breakpoint-s)) / 680));
 
 	label {
 		font-weight: 600;
 	}
 	
 	input {
-		border: rem(2px) solid transparent;
-		border-bottom: rem(2px) solid var(--ui-color-primary);
+		width: 100%;
+		border: 2px solid transparent;
+		border-bottom: 2px solid var(--ui-color-primary);
+
+		transition: all .1s linear;
+		transition-property: background-color, border-color;
 
 		&:focus {
 			outline: none;
-			border: rem(2px) solid var(--ui-color-primary);
+			border: 2px solid var(--ui-color-primary);
 			background-color: var(--ui-color-bg-secondary);
 		}
 	}
@@ -22,5 +24,15 @@
 	@include screen-xs {
 		display: block;
 		font-size: calc(20px + 6 * (100vw / 680));
+	}
+
+	@include screen-s {
+		display: flex;
+		align-items: first baseline;
+
+		label {
+			margin-right: 0.2em;
+			min-width: max-content;
+		}
 	}
 }
