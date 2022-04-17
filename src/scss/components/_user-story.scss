@@ -23,6 +23,7 @@
 			@include pseudo($content: url("/src/images/design/cross.svg"));
 			top: rem(2px);
 			left: rem(2px);
+			border-radius: 50%;
 		}
 
 		&:hover {
