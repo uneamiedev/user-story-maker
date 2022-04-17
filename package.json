@@ -6,7 +6,8 @@
   "homepage": "https://uneamiedev.github.io/user-story-maker/",
   "browserslist": [
     "last 2 versions",
-    "> 5%"
+    "> 5%",
+    "iOS"
   ],
   "bugs": {
     "url": "https://github.com/WeAreAthlon/frontend-webpack-boilerplate/issues",
