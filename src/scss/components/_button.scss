@@ -18,3 +18,28 @@
 		background-color: transparent;
 	}
 }
+
+.button-secondary {
+	@extend .reset-button;
+
+	padding: rem(14px) rem(36px);
+	border: 2px solid var(--ui-color-primary);
+	transition: all .3s ease-in-out;
+	transition-property: background-color, color;
+
+	&:hover,
+	&:focus-visible {
+		background-color: var(--ui-color-primary);
+	}
+}
+
+.button-secondary--danger {
+	color: var(--ui-color-danger);
+	border-color: var(--ui-color-danger);
+
+	&:hover,
+	&:focus-visible {
+		color: var(--ui-color-text);
+		background-color: var(--ui-color-danger);
+	}
+}

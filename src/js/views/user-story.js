@@ -84,8 +84,8 @@ class UserStoryView {
 			p.textContent = 'Aucune user story créée';
 			this.container.append(p);
 		} else {
-			this.createButton(this.container, 'js-user-story-delete-all', 'Supprimer toutes les user stories');
-			this.createButton(this.container, 'js-user-story-copy', 'Copier toutes les user stories');
+			this.createButton(this.container, ['js-user-story-copy', 'button-secondary'], 'Copier toutes les user stories');
+			this.createButton(this.container, ['js-user-story-delete-all', 'button-secondary', 'button-secondary--danger'], 'Supprimer toutes les user stories');
 			
 			const ul = this.createElement('ul');
 			this.container.append(ul);
@@ -99,7 +99,7 @@ class UserStoryView {
 	createElement(tag, className) {
 		const element = document.createElement(tag);
 
-		if (className) element.classList.add(className);
+		if (className) element.classList.add(...className);
 
 		return element;
 	}
