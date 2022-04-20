@@ -23,7 +23,8 @@ class UserStory {
 	}
 
 	deleteAll() {
-		this._commit([]);
+		this.userStories = [];
+		this._commit(this.userStories);
 		localStorage.removeItem('userStories');
 	}
 
@@ -43,6 +44,7 @@ class UserStory {
 	_commit(userStories) {
 		this.onUserStoryListChanged(userStories);
 		localStorage.setItem('userStories', JSON.stringify(userStories));
+		this.onUserStoryListChanged(userStories);
 	}
 
 	bindUserStoryChanged(callback) {
